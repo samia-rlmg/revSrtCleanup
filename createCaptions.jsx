@@ -5,9 +5,10 @@
 // 3. Make any font specifications in the "Character" panel in After Effects.
 // 4. Select the composition that contains the video file.
 // 5. Go to File > Scripts > Run Script File and select this file.
-// 6. Follow the directions, which will prompt you to select your caption file. 
+// 6. Follow the directions, which will prompt you to select your caption file.
 
 // Only proceed if active comp exists
+var activeComp = app.project.activeItem;
 if (activeComp != null) {
 
   if (confirm("You must make any font specifications in the 'Character' Panel before continuing.\nReady to proceed?")) {
