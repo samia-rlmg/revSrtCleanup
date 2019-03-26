@@ -37,7 +37,6 @@ for revfile in fileArr:
                 if line[0]=='[': # remove any speaker indicators, which are inside []
                     lineSplit = line.split('] ')
                     line = ' '.join(lineSplit[1:])
-                    print(line)
                 textArr.append(line)
             if counter==4: # if there is a fourth line, append its contents to the third line
                 textArr[len(textArr)-1] += line
