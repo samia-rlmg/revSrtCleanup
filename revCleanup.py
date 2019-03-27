@@ -39,13 +39,12 @@ for revfile in fileArr:
                     line = ' '.join(lineSplit[1:])
                 textArr.append(line)
             if counter==4: # if there is a fourth line, append its contents to the third line
-                textArr[len(textArr)-1] += line
-                textArr[len(textArr)-1] = " ".join(textArr[len(textArr)-1].split('\n')) + '\n'
+                newLine = textArr[len(textArr)-1] + line.split('\r\n')[0]
+                textArr[len(textArr)-1] = " ".join(newLine.split('\r\n'))
 
     rf.close()
 
     srtfile = open(newfile, "w")
-    print(len(counterArr), len(timecodeArr), len(textArr))
 
     # Write the contents of each array, now properly formatted, into a new file
     for i, entry in enumerate(counterArr):
